@@ -6,6 +6,7 @@
 	<title>Projeto</title>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="global.css">
+	<link rel="stylesheet" type="text/css" href="prism/prism.css" data-noprefix />
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -41,7 +42,8 @@
         <li><a href="#sec2" class="tab">Ciclo de Desenvolvimento</a></li>
         <li><a href="#sec3" class="tab">Benefícios do TDD</a></li>
         <li><a href="#sec4" class="tab">Frameworks TDD</a></li>
-        <li><a href="#sec5" class="tab">Referências</a></li>
+        <li><a href="#sec5" class="tab">Utilizando um Framework</a></li>
+        <li><a href="#sec6" class="tab">Referências</a></li>
        </ul>
       <div class="barra"></div>
     </nav>
@@ -51,7 +53,7 @@
 <main class="main">
 
 	<section id="sec1" class="sec">
-		<h1>Test Driven Development</h1>
+		<h1><span style="color: #3D99F2;">T</span>est Driven Development</h1>
 
 		<br>
 
@@ -89,7 +91,7 @@
 	</section>
 
 		<section id="sec2" class="sec">
-		<h1>Ciclo de desenvolvimento</h1>
+		<h1><span style="color: #3D99F2;">C</span>iclo de desenvolvimento</h1>
 
 		<br>
 
@@ -130,7 +132,7 @@
 	</section>
 
 	<section id="sec3" class="sec">
-		<h1>Benefícios do TDD</h1>
+		<h1><span style="color: #3D99F2;">B</span>enefícios do TDD</h1>
 		<br>
 
 		<p>Seguir o desenvolvimento orientado a testes significa que o software final apresentará menos bugs, o código será de alta qualidade, e a concentração dos desenvolvedores estarão voltadas para uma única funcionalidade por vez o que possibilita feedback rápido e aumentando a produtividade do programador.</p>
@@ -140,7 +142,7 @@
 	</section>
 
 	<section id="sec4" class="sec">
-		<h1>Frameworks TDD</h1>
+		<h1><span style="color: #3D99F2;">F</span>rameworks TDD</h1>
 
 		<p>Existem diversas ferramentas e frameworks para utilizar o tdd e algumas dessas ferramentas estão listadas a seguir:</p>
 
@@ -179,7 +181,112 @@
     </div>
 	</section>
 	<section id="sec5" class="sec">
-		<h1>Referências </h1>
+		<h1><span style="color: #3D99F2;">U</span>tilizando um Framework</h1>
+		<h3><span style="color: #3D99F2;">Teste unitário com JUnit</span></h3>
+
+<p>
+O JUnit é um Framework para testes unitário Java, o teste unitário valida apenas um pedaço do sistema, sendo utilizado  para testar funcionalidades, exibindo informações sobre seu funcionamento. 
+</p>
+
+<p>
+Para os exemplos a seguir foi utilizado o NetBeans, que ao ser instalado já possui o JUnit integrado. Também é possível fazer a instalação do JUnit para o Eclipse.
+<br>
+Ao criar o projeto a estrutura base para desenvolvimento será criada. Primeiramente é preciso compreender o projeto e entender suas funcionalidades para que criemos um teste para algo que ainda não existe.
+</p>
+<h3>Primeiros passo</h3>
+<p>O exemplo a seguir trata-se de uma calculadora para operações básicas</p>
+<ul>
+<li>Criar um novo projeto no Eclipse ou Netbeans com o nome <span style="color: #3D99F2;">[ArtigoTDD]</span></li>
+<li>No projeto, crie um pacote com o nome <span style="color: #3D99F2;">[calculadora.teste]</span></li>
+</ul>
+<pre>
+  <code class="language-java">
+package artigotdd.calculadora.teste;
+
+public class CalculadoraTeste {
+
+}
+  </code>
+</pre>
+<p>
+Agora que criamos o pacote vamos pensar sobre o nosso problema. Queremos realizar operações nesta calculadora. <br> Vamos realizar o exemplo para soma:<br> Após a inserção de 2 valores o resultado deve ser a soma deles.
+<br><br>
+Vamos escrever exatamente esse teste com o JUnit.
+<br> Nota: Para o JUnit entender que o método é "testável", temos a anotação <span style="color: #3D99F2;">@Test</span>
+</p>
+
+<pre>
+  <code class="language-java">
+	public class CalculadoraTeste {
+
+public class CalculadoraTeste {
+    @Test
+    public void deveSomarDoisValoresPassados() throws Exception {
+
+    }
+}
+  </code>
+</pre>
+
+<p>Como pode ser observado o nome do nosso método deve mostrar exatamente o que ele busca fazer. <br>Agora que temos o método de teste bamos indicar para ele o que queremos.
+<br><br>
+Vamos inserir duas variáveis e utilizar o método <span style="color: #3D99F2;">[assertEquals]</span> do JUnit.<br>
+</p>
+<pre>
+  <code class="language-java">
+public class CalculadoraTeste {
+    @Test
+    public void deveSomarDoisValoresPassados() throws Exception {
+        int valorA = 1;
+        int valorB = 2;
+        int soma = 0;
+
+        assertEquals(3, soma);
+    }
+}
+  </code>
+</pre>
+
+<p>Caso o código seja executado no estado atual ele resultará em falha, pois agora nós temos o teste para a função mas não temos a função e o método para chamar essa função</p>
+<h3>Implementando o método</h3>
+<pre>
+  <code class="language-java">
+public class CalculadoraTeste {
+    @Test
+    public void deveSomarDoisValoresPassados() throws Exception {
+        int valorA = 1;
+        int valorB = 2;
+        Calculadora calculadora = new Calculadora();
+        int soma = calculadora.soma(valorA, valorB);
+
+        assertEquals(3, soma);
+    }
+}
+  </code>
+</pre>
+
+<h3>Criando a função</h3>
+
+<pre>
+  <code class="language-java">
+public class Calculadora {
+
+    public int soma(int valorA, int valorB) {
+        return valorA + valorB;
+    }
+}
+  </code>
+</pre>
+
+<p>
+Executando o código agora vamos obter um resultado positivo ao teste, indicando que a função está funcionando corretamente.
+<br>
+As etapas seguintes com as operações básicas restantes terão um desenvolvimento de testes similar ao apresentado.</p>
+
+	</section>
+	<section id="sec6" class="sec">
+		<h1><span style="color: #3D99F2;">R</span>eferências</h1><br>
+		
 		<ul>
 		<li><a href="https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533" target="_blank" style="text-decoration: none;"><span style="color: #3D99F2;"><b>DevMedia|TDD</b></span></a></li>
 		<li><a href="https://www.youtube.com/watch?v=bLdEypr2e-8" target="_blank" style="text-decoration: none;"><span style="color: #3D99F2;"><b>Dicionário do Programador</b></span></a></li>
@@ -188,5 +295,6 @@
 	</section>
 
 </main>
+  <script src="prism/prism.js"></script>
 </body>
 </html>
