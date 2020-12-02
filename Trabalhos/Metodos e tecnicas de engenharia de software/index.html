@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Projeto</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="global.css">
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<body>
+	<div class="navigation-wrap bg-light start-header start-style">
+		<div class="container">
+				<div class="col-12">
+					<nav class="navbar navbar-expand-md navbar-light">
+						<h1 class="navbar-brand">Test Driven Development</h1>	
+						
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ml-auto py-4 py-md-0">
+
+								<li class="nav-item ml-0 ml-md-4">
+									<a class="nav-link" href="#">Artigo</a>
+								</li>
+                <li class="nav-item ml-0 ml-md-4">
+									<a class="nav-link" href="sobre.html">Sobre</a>
+								</li>
+								
+							</ul>
+						</div>
+					</nav>		
+				</div>
+			</div>
+		</div>
+
+<!--Guia da página-->
+  <div class="setor">
+  <nav>
+      <ul>
+        <li><a href="#sec1" class="tab">Test Driven Devlopment</a></li>
+        <li><a href="#sec2" class="tab">Ciclo de Desenvolvimento</a></li>
+        <li><a href="#sec3" class="tab">Benefícios do TDD</a></li>
+        <li><a href="#sec4" class="tab">Frameworks TDD</a></li>
+        <li><a href="#sec5" class="tab">Referências</a></li>
+       </ul>
+      <div class="barra"></div>
+    </nav>
+   </div>
+
+
+<main class="main">
+
+	<section id="sec1" class="sec">
+		<h1>Test Driven Development</h1>
+
+		<br>
+
+		<p>
+		Descoberto em 2003 por kent beck o TDD
+
+		 <span style="color: #3D99F2;">
+
+		 [Test Driven Development]
+
+		</span> é uma prática de desenvolvimento de software defendido pelo eXtreme Programming 
+
+		<span style="color: #3D99F2;">[xp]
+		</span>.
+		 <br><br>
+
+		<p>O TDD trata-se do desenvolvimento orientado por testes, onde o software a ser desenvolvido é contruído baseado em testes. A ideia básica do tdd é escrever o código de teste primeiro e depois escrever apenas o suficente do código do software para passar no teste, dessa forma, os programadores se concentram no que é mais importante para o software.</p>
+
+		<br>
+
+		<p>Os Tdd trabalham em pequenos ciclos onde são é criados os teste para cada funcionalidade do sistema. esses testes podem ser de unidade ou testes funcionais.</p>
+
+		</p>
+		<ul>
+
+		<li>Os testes de unidade testam linhas individuais de código.</li>
+		<li>Os testes funcionais testam uma função maior no sistema.</li>
+		</ul>
+
+		<br>
+
+		<iframe  width="420" height="270" src="https://www.youtube.com/embed/bLdEypr2e-8" frameborder="0" allowfullscreen></iframe>
+
+
+	</section>
+
+		<section id="sec2" class="sec">
+		<h1>Ciclo de desenvolvimento</h1>
+
+		<br>
+
+		O processo de desenvolvimento com tdd é sempre: 
+		<span style="color: #E73232;">red</span>,
+		<span style="color: #3FE833;">green</span>
+		 e
+		<span style="color: #8833E8;">refactor</span>.
+
+		<br><br>		
+		
+		<span style="color: #E73232;">Red</span>
+
+		<li>escrevemos um teste;</li>
+		<li>O teste falha;</li>
+
+		<br>
+		
+		<span style="color: #3FE833;">Green</span>
+
+		<li>escrevemos a funcão no sistema; </li>
+		<li>código passa no teste;</li>
+
+		<br>
+
+		<span style="color: #8833E8;">Refactor</span>
+
+		<li>refatora e limpa o código para uma melhor qualidade;
+		</li>
+		<li>começa o próximo teste;</li>
+		<br>
+
+		<img src="img/CicloTDD.png" width="400" height="250">
+		<br><br>
+		<p>
+		Com esse tipo de estratégia, nós temos um feedback rápido sobre as novas funcionalidades do sistema e sobre possíveis quebras de outras funcionalidades. Com isso, temos mais segurança na adição de novas funcionalidades e no processo de refatoração.</p>
+	
+	</section>
+
+	<section id="sec3" class="sec">
+		<h1>Benefícios do TDD</h1>
+		<br>
+
+		<p>Seguir o desenvolvimento orientado a testes significa que o software final apresentará menos bugs, o código será de alta qualidade, e a concentração dos desenvolvedores estarão voltadas para uma única funcionalidade por vez o que possibilita feedback rápido e aumentando a produtividade do programador.</p>
+
+		<p>durante o desenvolvimento a criação dos testes Economiza o tempo do desenvolvedor a longo prazo, quando necessário testar uma nova funcionalidade o código teste já estará disponivel p mesmo para funcionalidades que falharam. Também ajuda o desenvolvedor a identificar erros, onde está e como está paralisando o código.</p>
+
+	</section>
+
+	<section id="sec4" class="sec">
+		<h1>Frameworks TDD</h1>
+
+		<p>Existem diversas ferramentas e frameworks para utilizar o tdd e algumas dessas ferramentas estão listadas a seguir:</p>
+
+		<div class="CardContainer" id="myContainer">
+       
+        <div class="card" onclick=" window.open('https://phpunit.de/','_blank')">
+            <img src="img/phpunit.png">
+            <p>
+            É um framework de teste de unidade para a linguagem de programação PHP.
+            </p>
+        </div>
+            <div class="card" onclick=" window.open('https://mochajs.org/','_blank')">
+            <img src="img/mocha.png">
+            <p>
+            É uma estrutura de testes de unidade para JavaScript e Node.js.
+            </p>
+        </div>
+            <div class="card" onclick=" window.open('https://junit.org/junit5/','_blank')">
+            <img src="img/junit5.png">
+            <p>
+            O JUnit5 é um framework para testes de software em java.  Esse framework facilita a criação e manutenção do código para a automação de testes.
+            </p>
+        </div>
+            <div class="card" onclick=" window.open('https://docs.pytest.org/en/latest/index.html','_blank')">
+            <img src="img/pytest.png">
+            <p>
+            A pytest torna mais fácil escrever pequenos testes, mas pode ser ajustado para suportar testes funcionais complexos para aplicativos e bibliotecas.
+            </p>
+        </div>
+            <div class="card" onclick=" window.open('https://www.katalon.com/homepage/?pk_abe=AB_testing_Homepage_11_2020&pk_abv=layout2','_blank')">
+            <img src="img/katalon.png">
+            <p>
+            Katalon Studio é um software construído sob estruturas de automação selenium,com uma ide especializada para testes de aplicativos web
+            </p>
+        </div>
+    </div>
+	</section>
+	<section id="sec5" class="sec">
+		<h1>Referências </h1>
+		<ul>
+		<li><a href="https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533" target="_blank" style="text-decoration: none;"><span style="color: #3D99F2;"><b>DevMedia|TDD</b></span></a></li>
+		<li><a href="https://www.youtube.com/watch?v=bLdEypr2e-8" target="_blank" style="text-decoration: none;"><span style="color: #3D99F2;"><b>Dicionário do Programador</b></span></a></li>
+		<li><a href="https://www.xenonstack.com/insights/what-is-test-driven-development/" target="_blank" style="text-decoration: none;"><span style="color: #3D99F2;"><b>Xenonstack</b></span></a></li>
+		</ul>
+	</section>
+
+</main>
+</body>
+</html>
